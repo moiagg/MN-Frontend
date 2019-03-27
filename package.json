@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "frontend",
   "main": "index.js",
-   "scripts": {
+  "scripts": {
     "build": "next build",
     "dev": "next",
     "now-build": "next build"
@@ -20,7 +20,8 @@
     "react-markdown": "^4.0.6",
     "react-redux": "^6.0.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "socket.io-client": "^2.2.0"
   },
   "repository": {
     "type": "git",
