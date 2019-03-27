@@ -1,6 +1,6 @@
 import { Component } from "react";
 import Link from "next/link";
-import { Template } from "../src/components/common";
+import Template from "../src/components/Template";
 class AboutPage extends Component {
   static getInitialProps() {
     const isServer = typeof window === "undefined";

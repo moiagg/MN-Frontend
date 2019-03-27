@@ -1,37 +1,18 @@
+import { connect } from "react-redux";
+import Template from "../src/components/Template";
 
-// import Link from 'next/link';
-// const Index = () => (
-//   <Template className={"container mx-auto mt-5 h-100"}>
-//     <h1 className="text-center">Welcome to Moia Now</h1>
-//   </Template>
-// );
+const Index = () => (
+  <Template id="home" className={"container mx-auto"}>
+    <div className="d-block">
+      <h1 className="text-center">Welcome to Moia Net</h1>
+    </div>
 
-import { Template } from "../src/components/common";
+    <style jsx>{`
+      #home {
+        background-image: url("./static/mn-bg.jpeg");
+      }
+    `}</style>
+  </Template>
+);
 
-import {Component}from 'react';
-import io from "socket.io-client";
-class Index extends Component {
-  constructor(props){
-    super(props);
-    this.state ={
-      msg:''
-    }
-  }
-  componentDidMount(){
-    this.socket = io()
-    this.socket.on('now', data =>{
-      this.setState({
-        msg:data.message
-      })
-    })
-  }
-  render(){
-    return (
-      <Template className={"container mx-auto mt-5 h-100"}>
-        <h1 className="text-center">Welcome to Moia Now</h1>
-        {" "}
-      </Template>
-    );
-    }
-  }
-  export default Index;
+export default connect(null)(Index);
