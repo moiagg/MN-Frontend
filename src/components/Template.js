@@ -1,5 +1,5 @@
-const Template = ({ title, className, children }) => (
-  <div className="template">
+const Template = ({ id, className, children }) => (
+  <div id={id} className="template">
     {/* Child Elements */}
     <div className={className}>{children}</div>
     {/* GLOBAL CSS */}

@@ -16,6 +16,7 @@
     "moment": "^2.24.0",
     "next": "^8.0.3",
     "next-redux-wrapper": "^3.0.0-alpha.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-markdown": "^4.0.6",
@@ -35,6 +36,5 @@
   "bugs": {
     "url": "https://github.com/moiagg/MN-Frontend/issues"
   },
-  "homepage": "https://github.com/moiagg/MN-Frontend#readme",
-  "proxy": "http://localhost:5000"
+  "homepage": "https://github.com/moiagg/MN-Frontend#readme"
 }

@@ -2,6 +2,7 @@
 export const GET_ERRORS = "GET_ERRORS";
 
 // AUTH REDUCER
+export const AUTHORIZE_USER = "AUTHORIZE_USER"
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
 
 //Profile Reducer
