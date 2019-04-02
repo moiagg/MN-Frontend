@@ -12,17 +12,23 @@ export const testAuth = (loginData, history) => dispatch => {
   // Posts User Information
   axios.post("http://localhost:5000/api/auth/auth", loginData).then(res => {
     console.log("authorized");
-    dispatch({
-      type: AUTHORIZE_USER,
-      payload: true
-    });
+    // Save to Local Storage
+    const { token } = res.data;
+    //set TOke to Local storage
+    localStorage.setItem("jwtToken", token);
+    // Set token to Auth Header
+    setAuthToken(token);
+    // Decode Toke for User data
+    const decoded = jwt_decode(token);
+    // set current user
+    dispatch(setCurrentUser(decoded));
   })
-  .catch(err =>
-    dispatch({
-      type: GET_ERRORS,
-      payload: err.response.data
-    })
-  );
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
 };
 // Register USer
 export const registerUser = (userData, history) => dispatch => {
@@ -65,7 +71,7 @@ export const loginUser = userData => dispatch => {
 // Set logged in user
 export const setCurrentUser = decoded => {
   return {
-    type: SET_CURRENT_USER,
+    type:AUTHORIZE_USER,
     payload: decoded
   };
 };

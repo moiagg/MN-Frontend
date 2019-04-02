@@ -5,6 +5,7 @@ import Header from "../src/components/Header";
 import Authentication from "../src/components/Authentication";
 
 const displayHome = auth => {
+  console.log(auth)
   if (!auth) {
     return <Authentication />;
   } else {

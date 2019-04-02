@@ -10,6 +10,12 @@ const InitialState = {};
 
 const middleware = [thunk];
 
+export const store = createStore(
+  reducer,
+  InitialState,
+  composeWithDevTools(applyMiddleware(thunk))
+);
+
 export const initStore = (initialState = InitialState) => {
   return createStore(
     reducer,
